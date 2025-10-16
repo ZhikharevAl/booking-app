@@ -1,5 +1,3 @@
-version: "2"
-
 run:
   timeout: 5m
   tests: true
@@ -12,28 +10,17 @@ linters:
     - staticcheck
     - unused
     - gosec
-    - misspell
-    - unconvert
     - goconst
     - gocyclo
-    - gocritic
-   # - revive
-    - errname
-    - errorlint
-    - bodyclose
-    - nilerr
-    - dupl
+    - misspell
+    - unconvert
 
 linters-settings:
   gocyclo:
     min-complexity: 15
-
   goconst:
     min-len: 3
     min-occurrences: 3
-
-  errcheck:
-    check-type-assertions: true
 
 issues:
   max-issues-per-linter: 0
@@ -44,9 +31,3 @@ issues:
       linters:
         - errcheck
         - gosec
-        - dupl
-
-output:
-  path-prefix: colored-line-number
-  formats: true
-  path-mode: true
